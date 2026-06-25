@@ -3,21 +3,41 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-// import 'leaflet/dist/leaflet.css';
-
-<html>
-<body>
-
-<h2>What Can JavaScript Do?</h2>
-
-<p>JavaScript can change HTML attribute values.</p>
-
-<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
-
-<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+import React from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 
-<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
 
-</body>
-</html>
+function App() {
+  <h1>hello</h1>
+
+
+  const detroitPosition = [42.344863, -83.056870];
+
+  return (
+    
+    <div style={{ height: '100vh', width: '100vw' }}>
+    
+      
+      {/* 1. The Map Window */}
+      <MapContainer 
+        center={detroitPosition} 
+        zoom={13} 
+        style={{ height: '100%', width: '100%' }}
+      >
+        
+        {/* 2. The Map Tile Layer (Drawing the roads/terrain) */}
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+      </MapContainer>
+
+    </div>
+  );
+}
+
+
+
+export default App;
