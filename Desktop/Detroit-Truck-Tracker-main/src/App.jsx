@@ -1,22 +1,78 @@
-import React, { useState, useEffect, useRef } from "react";
-import { MapContainer, TileLayer, GeoJSON, LayersControl, LayerGroup, Popup, Marker } from 'react-leaflet';
+import React, { useState, useEffect, useRef, memo } from "react";
+import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup} from 'react-leaflet';
 
+/*SUB COMPONENTS OF THE MAP*//////
+const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
+  return (
+
+    <CircleMarker
+      center={[lat, lng]}
+      radius={isActive ? 11:8}
+      pathOptions={{
+        color: isActive ? '#fff': '#66b246',
+          fillColor: '#689cca',
+          fillOpacity: isActive ? 1: 0.8,
+          weight: isActive ? 2 : 1,
+
+        }}
+          eventHandlers={{click: onSelect}}
+
+      />  /*dont need to write circle marker again, can just use />*/
+
+  
+  );
+  
+});
+/*cinematic panning movement*/
+
+function FlyToTarget({ target }) {
+ const map = useMap()
+ const prevTarget = useRef(null)
+
+
+ useEffect(() => {
+   if (target && target !== prevTarget.current) {
+     prevTarget.current = target
+     map.flyTo([target.lat, target.lng], 15, { duration: 1.2 })
+   }
+ }, [target, map])
+
+
+ return null
+}
+
+/*MAIN ENGINE PART THAT ACTUALLY RUNS EVERYTHING *////////////
 export default function App() {
 
   const [geoData, setGeoData] = useState(null);
-  const mapRef = useRef();
-  const position = [42.344863, -83.056870]; 
+  const [trucks, setTrucks] = useState([]);
+  const [selected, setSelected] = useState(null);
+
+  /*district boundries*/
 
   useEffect(() => {
     fetch("/Detroit_City_Council_Districts_2026.geojson")
     .then((res) => res.json())
     .then((data) => setGeoData(data))
-    .catch((err) => console.error("Faile to load GeoJSON", err));
-  
-}, []);
+    .catch((err) => console.error("Failed to load GeoJSON", err));}, []);
 
-  return (
-    <> 
+  /*Truck data points */
+  useEffect(() => {
+  fetch('/output.geojson')
+    .then(res => res.json())
+    .then(data => setTrucks(data.features || []))
+    .catch((err) => console.error('Failed to load truck plots', err));
+}, [])
+
+
+ const handleSelect = (feature, index) => {
+   const [lng, lat] = feature.geometry.coordinates
+   setSelected({lat, lng, id: index});
+ };
+
+    
+    return(<>
+    
       {/* some words */}
       <h1 style={{ position: 'absolute', top: 10, left: 50, zIndex: 1000, background: 'white', padding: '10px 10px', borderRadius: '0px' }}>
         Truck Reports
@@ -35,56 +91,31 @@ export default function App() {
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' /*the actual map*/
         />
         {geoData && <GeoJSON data = {geoData}/> }
-      </MapContainer>
 
-    </> 
+      {/*loops the coordinates*/}
+        {trucks.map((truck, index) => {
+          const [lng, lat] = truck.geometry.coordinates;
+          return (
+            <TruckMarker 
+              key={index}
+              lat={lat}
+              lng={lng}
+              isActive={selected?.id === index}
+              onSelect={() => handleSelect(truck, index)}
+            />
+          );
+        })}
+        <FlyToTarget target={selected} />
+      </MapContainer>
+    </>
+
   );
+   
+  
 }
 
 
 
-
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
-// import './App.css'
-// import React from 'react';
-// import { MapContainer, TileLayer } from 'react-leaflet';
-// import "leaflet/dist/leaflet.css";
-
-// import { MapContainer, TileLayer, CircleMarker, Tooltip, useMap, ZoomControl } from 'react-leaflet'
-
-
-// function App() {
-
-//   //sets up the page
-//   const detroitPosition = [42.344863, -83.056870];
-  
-//   //renders out what information is going to be on the page
-//   return (
-    
-//     <div style={{ height: '100vh', width: '100vw' }}>
-    
-      
-//       {/* 1. The Map Window */}
-//       <MapContainer 
-//         center={detroitPosition} 
-//         zoom={13} 
-//         style={{ height: '100%', width: '100%' }}
-//       >
-        
-//         {/* 2. The Map Tile Layer (Drawing the roads/terrain) */}
-//         <TileLayer
-//           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-//           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//         />
-
-//       </MapContainer>
-
-//     </div>
-//   );
-// }
 
 
 
