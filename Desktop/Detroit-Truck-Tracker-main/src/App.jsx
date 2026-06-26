@@ -9,8 +9,8 @@ const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
       center={[lat, lng]}
       radius={isActive ? 11:8}
       pathOptions={{
-        color: isActive ? '#fff': '#66b246',
-          fillColor: '#689cca',
+        color: isActive ? '#fff': '#551532',
+          fillColor: '#a72f53',
           fillOpacity: isActive ? 1: 0.8,
           weight: isActive ? 2 : 1,
 
@@ -82,7 +82,7 @@ export default function App() {
       {/* starting coordinates/position */}
       <MapContainer 
         center={[42.344863, -83.056870]} 
-        zoom={13} 
+        zoom={12} 
         style={{ height: '100vh', width: '100vw' }}
       >
         {/* map layer */}
@@ -90,7 +90,16 @@ export default function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' /*giving credit*/
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' /*the actual map*/
         />
-        {geoData && <GeoJSON data = {geoData}/> }
+        {/*customizing the colors of the boundry*/}
+        {geoData && <GeoJSON 
+        data = {geoData}
+        style= {{
+          color: "#246E96",
+          weight: 0.8,
+          fillColor: "#4594C2",
+          fillOpacity: 0.2,
+        }}
+        /> }
 
       {/*loops the coordinates*/}
         {trucks.map((truck, index) => {
