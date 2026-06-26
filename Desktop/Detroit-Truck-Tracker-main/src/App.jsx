@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, memo } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup} from 'react-leaflet';
+import logo from "/TOOS_Logo.png";
 
 /*SUB COMPONENTS OF THE MAP*//////
 const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
@@ -41,7 +42,53 @@ function FlyToTarget({ target }) {
 
  return null
 }
+/*creating a header*/
 
+function MapHeader() {
+  return (
+    <header style={{
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      height: '60px',
+      backgroundColor: '#fff', 
+      backdropFilter: 'blur(8px)',                 //  drop down shadow effect
+      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+      zIndex: 1000,                                // Must sit higher than the map layer!
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '0 32px',
+      // paddingright: '0 10px',
+      boxSizing: 'border-box',
+      fontFamily: 'system-ui, -apple-system, Helvetica'
+    }}>
+      {/* Left Side: Brand Logo/Title */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <img src = {logo} alt="Toos logo" width= "90" heigh= "90" />; {/*logo image*/}
+        <h1 style={{ fontSize: '19px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
+          Detroit Truck Reports
+        </h1>
+      </div>
+
+      {/* links on the right side of the header */}
+      <nav style={{ display: 'flex', gap: '20px' }}>
+        <a href="#dashboard" style={navLinkStyle}>Air Monitors</a>
+        <a href="#reports" style={{ ...navLinkStyle, color: '#66b246', fontWeight: '600' }}>Report a Truck</a>
+        {/* <a href="#settings" style={navLinkStyle}>Settings</a> */}
+      </nav>
+    </header>
+  );
+}
+
+// Quick clean style helper for header links
+const navLinkStyle = {
+  textDecoration: 'none',
+  color: '#64748b',
+  fontSize: '14px',
+  transition: 'color 0.2s',
+};
 
 /*MAIN ENGINE PART THAT ACTUALLY RUNS EVERYTHING *////////////
 export default function App() {
@@ -75,11 +122,7 @@ export default function App() {
     
     return(<>
     
-      {/* some words
-      <h2 style={{ position: 'center', top: 10, left: 60, zIndex: 1000, background: 'white', padding: '10px 10px', borderRadius: '2px' }}>
-        sdev logo
-      </h2> */}
-    
+      <MapHeader />
 
       {/* starting coordinates/position */}
       <MapContainer 
