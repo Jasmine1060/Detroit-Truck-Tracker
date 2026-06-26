@@ -23,6 +23,7 @@ const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
   );
   
 });
+
 /*cinematic panning movement*/
 
 function FlyToTarget({ target }) {
@@ -33,13 +34,14 @@ function FlyToTarget({ target }) {
  useEffect(() => {
    if (target && target !== prevTarget.current) {
      prevTarget.current = target
-     map.flyTo([target.lat, target.lng], 15, { duration: 1.2 })
+     map.flyTo([target.lat, target.lng], 15, { duration: 0.8 })
    }
  }, [target, map])
 
 
  return null
 }
+
 
 /*MAIN ENGINE PART THAT ACTUALLY RUNS EVERYTHING *////////////
 export default function App() {
@@ -73,10 +75,10 @@ export default function App() {
     
     return(<>
     
-      {/* some words */}
-      <h1 style={{ position: 'absolute', top: 10, left: 50, zIndex: 1000, background: 'white', padding: '10px 10px', borderRadius: '0px' }}>
-        Truck Reports
-      </h1>
+      {/* some words
+      <h2 style={{ position: 'center', top: 10, left: 60, zIndex: 1000, background: 'white', padding: '10px 10px', borderRadius: '2px' }}>
+        sdev logo
+      </h2> */}
     
 
       {/* starting coordinates/position */}
