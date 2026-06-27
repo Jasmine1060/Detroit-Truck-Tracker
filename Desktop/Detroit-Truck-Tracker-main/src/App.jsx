@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, memo } from "react";
-import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup} from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup, ZoomControl} from 'react-leaflet';
 import logo from "/TOOS_Logo.png";
 
 /*SUB COMPONENTS OF THE MAP*//////
@@ -45,13 +45,20 @@ function FlyToTarget({ target }) {
 /*creating a header*/
 
 function MapHeader() {
+
+  // const imgStyle = {
+
+  //     position: 'absolute',
+  //     left: '200px',
+  //     top:'15px', };
+
   return (
     <header style={{
       position: 'absolute',
       top: 0,
       left: 0,
       right: 0,
-      height: '60px',
+      height: '80px',
       backgroundColor: '#fff', 
       backdropFilter: 'blur(8px)',                 //  drop down shadow effect
       boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
@@ -59,23 +66,39 @@ function MapHeader() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      padding: '0 32px',
-      // paddingright: '0 10px',
+      padding: '0 40px',
+      margin: 0,
       boxSizing: 'border-box',
-      fontFamily: 'system-ui, -apple-system, Helvetica'
+      overflow: 'hidden',
+
+      fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
-      {/* Left Side: Brand Logo/Title */}
+      {/* <div style={{display: 'flex', alignItems: 'flex', gap: '12px'}}>
+  
+        
+        
+      
+
+      {/* <img id="myImage" src="truck.png" style={imgStyle} alt="Truck" /> */}
+
+      {/* Left Side: coalition name */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <img src = {logo} alt="Toos logo" width= "90" heigh= "90" />; {/*logo image*/}
-        <h1 style={{ fontSize: '19px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
+        <img src = {logo} alt="Toos logo" width= "90" height= "90" />; {/*logo image */}
+
+        <h1 style={{ fontSize: '18px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
           Detroit Truck Reports
         </h1>
       </div>
 
+      {/* <img id="myImage" src="truck.png" style={imgStyle} alt="Truck" /> */}
+
+      
+
       {/* links on the right side of the header */}
-      <nav style={{ display: 'flex', gap: '20px' }}>
+      <nav style={{ display: 'flex', gap: '24px', aligntItems: 'center', marginRight: '160px' }}>
+        <a href='#Truck reports' style={navLinkStyle}>Truck Sightings</a>
         <a href="#dashboard" style={navLinkStyle}>Air Monitors</a>
-        <a href="#reports" style={{ ...navLinkStyle, color: '#66b246', fontWeight: '600' }}>Report a Truck</a>
+        <a href="#reports" style={navLinkStyle}>Report a Truck</a>
         {/* <a href="#settings" style={navLinkStyle}>Settings</a> */}
       </nav>
     </header>
@@ -127,7 +150,9 @@ export default function App() {
       {/* starting coordinates/position */}
       <MapContainer 
         center={[42.344863, -83.056870]} 
-        zoom={12} 
+        zoom={12}
+        zoomControl={false}
+        // ZoomControl Position = 'bottomright'
         style={{ height: '100vh', width: '100vw' }}
       >
         {/* map layer */}
@@ -135,6 +160,8 @@ export default function App() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' /*giving credit*/
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' /*the actual map*/
         />
+        <ZoomControl position="bottomright" />
+
         {/*customizing the colors of the boundry*/}
         {geoData && <GeoJSON 
         data = {geoData}
