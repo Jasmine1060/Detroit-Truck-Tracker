@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup, ZoomControl} from 'react-leaflet';
-import logo from "/TOOS_Logo.png";
 import {Link} from "react-router-dom"
+
 
 /*SUB COMPONENTS OF THE MAP*//////
 const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
@@ -43,76 +43,7 @@ function FlyToTarget({ target }) {
 
  return null
 }
-/*creating a header*/
 
-function MapHeader() {
-
-  // const imgStyle = {
-
-  //     position: 'absolute',
-  //     left: '200px',
-  //     top:'15px', };
-
-  return (
-    <header style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      height: '80px',
-      backgroundColor: '#fff', 
-      backdropFilter: 'blur(8px)',                 //  drop down shadow effect
-      boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-      zIndex: 1000,                                // Must sit higher than the map layer!
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '0 40px',
-      margin: 0,
-      boxSizing: 'border-box',
-      overflow: 'hidden',
-
-      fontFamily: 'system-ui, -apple-system, sans-serif'
-    }}>
-      {/* <div style={{display: 'flex', alignItems: 'flex', gap: '12px'}}>
-  
-        
-        
-      
-
-      {/* <img id="myImage" src="truck.png" style={imgStyle} alt="Truck" /> */}
-
-      {/* Left Side: coalition name */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <img src = {logo} alt="Toos logo" width= "90" height= "90" />; {/*logo image */}
-
-        <h1 style={{ fontSize: '18px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
-          Detroit Truck Reports
-        </h1>
-      </div>
-
-      {/* <img id="myImage" src="truck.png" style={imgStyle} alt="Truck" /> */}
-
-      
-
-      {/* links on the right side of the header */}
-      <nav style={{ display: 'flex', gap: '24px', aligntItems: 'center', marginRight: '160px' }}>
-        <a href='#Truck reports' style={navLinkStyle}>Truck Sightings</a>
-        <a href="#dashboard" style={navLinkStyle}>Air Monitors</a>
-        <a href="#reports" style={navLinkStyle}>Report a Truck</a>
-        {/* <a href="#settings" style={navLinkStyle}>Settings</a> */}
-      </nav>
-    </header>
-  );
-}
-
-// Quick clean style helper for header links
-const navLinkStyle = {
-  textDecoration: 'none',
-  color: '#64748b',
-  fontSize: '14px',
-  transition: 'color 0.2s',
-};
 
 /*MAIN ENGINE PART THAT ACTUALLY RUNS EVERYTHING *////////////
 export default function Trucks() {
@@ -146,7 +77,6 @@ export default function Trucks() {
     
     return(<>
     
-      <MapHeader />
 
       {/* starting coordinates/position */}
       <MapContainer 
@@ -154,7 +84,7 @@ export default function Trucks() {
         zoom={12}
         zoomControl={false}
         // ZoomControl Position = 'bottomright'
-        style={{ height: '100vh', width: '100vw' }}
+        style={{ height: '100vh', width: '100vw' }} /* this pushes out the map in any direction, DONT EDIT THIS*/
       >
         {/* map layer */}
         <TileLayer
@@ -188,9 +118,9 @@ export default function Trucks() {
           );
         })}
         {/* linking everything*/}
-        <Link to="/">Trucks</Link>
+        {/* <Link to="/">Trucks</Link>
         <Link to="/Air">Air</Link>
-        <Link to="/report">report</Link>
+        <Link to="/report">report</Link> */}
 
 
         <FlyToTarget target={selected} />
