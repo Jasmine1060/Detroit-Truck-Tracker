@@ -31,23 +31,21 @@ export function Navbar() {
         
               fontFamily: 'system-ui, -apple-system, sans-serif'
             }}>
-        
-              {/* Left Side: coalition name */}
+        {/* Left Side: coalition name */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <img src = {logo} alt="Toos logo" width= "90" height= "90" />; {/*logo image */}
+                <img src = {logo} alt="Toos logo" width= "90" height= "90" /> {/*logo image */}
         
-                <h1 style={{ fontSize: '18px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
+                <h1 style={{ fontSize: '23px', fontWeight: '600', margin: 0, color: '#1e293b' }}>
                   Detroit Truck Reports
                 </h1>
               </div>
         
               {/* links on the right side of the header */}
-              <nav style={{ display: 'flex', gap: '24px', aligntItems: 'center', marginRight: '160px' }}>
-                <a href='#Truck reports' style={navLinkStyle}>Truck Sightings</a>
-                <a href="#dashboard" style={navLinkStyle}>Air Monitors</a>
-                <a href="#reports" style={navLinkStyle}>Report a Truck</a>
-                {/* <a href="#settings" style={navLinkStyle}>Settings</a> */}
+              <nav style={{ display: 'flex', gap: '24px', aligntItems: 'center', marginRight: '100px' }}>
+                <Link to="/" style={navLinkStyle}>Truck Sightings</Link>
+                <Link to="/Air" style={navLinkStyle}>Air Monitors</Link>
               </nav>
+        
             </header>
           );
         }

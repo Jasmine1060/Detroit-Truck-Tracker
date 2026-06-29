@@ -84,7 +84,7 @@ export default function Trucks() {
         zoom={12}
         zoomControl={false}
         // ZoomControl Position = 'bottomright'
-        style={{ height: '100vh', width: '100vw' }} /* this pushes out the map in any direction, DONT EDIT THIS*/
+        style={{ height: '100vh', width: '100vw' }} /* this pushes out the map in any direction*/
       >
         {/* map layer */}
         <TileLayer
