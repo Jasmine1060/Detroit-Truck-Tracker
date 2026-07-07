@@ -49,14 +49,47 @@ export function Navbar() {
             </header>
           );
         }
-        // <nav style={{ display: 'flex', gap: '10px' }}>
-        //     <Link to="/">Trucks</Link>
-        //         <button>Truck Reports</button>
-        //     <Link to="/Air">Air</Link>
-        //         <button>Air Monitors</button>
-        //     <Link to="/report">report</Link>
-        //         <button>Report a Truck</button>
 
-//         </nav>
-    
-// };
+function MapHeader() {
+  // 1. Create a state box to track the active hash
+  const [activeHash, setActiveHash] = useState(window.location.hash || '#dashboard');
+
+  // 2. Listen for when the user clicks a link and the hash changes
+  useEffect(() => {
+    const handleHashChange = () => setActiveHash(window.location.hash);
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  return (
+    <header style={headerStyle}>
+      <ul className="nav_links" style={navLinksContainerStyle}>
+        <li>
+          <a 
+            href="#Truck Sightings" 
+            style={{ 
+              ...navLinkStyle, 
+              // 🎨 If active, turn orange. If not, stay gray.
+              color: activeHash === '#/' ? '#ff6511' : '#64748b',
+              fontWeight: activeHash === '#/' ? '600' : '400'
+            }}
+          >
+            Truck Sightings
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#/Air" 
+            style={{ 
+              ...navLinkStyle, 
+              color: activeHash === '#/Air' ? '#ff6511' : '#64748b',
+              fontWeight: activeHash === '#/Air' ? '600' : '400'
+            }}
+          >
+            Air Monitors
+          </a>
+        </li>
+      </ul>
+    </header>
+  );
+}
