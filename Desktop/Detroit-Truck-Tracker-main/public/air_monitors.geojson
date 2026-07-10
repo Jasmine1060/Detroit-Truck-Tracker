@@ -1,0 +1,277 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.999968,
+                    42.43079892
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - E7 Mile",
+                "address": "Near 19121 Dresden St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.09362406,
+                    42.31124851
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - DP4th",
+                "address": "4700 W Fort St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.10368139,
+                    42.31204598
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - Military Park",
+                "address": "1230 Military St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.12952685,
+                    42.29600386
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - Trinity",
+                "address": "9191 W. Fort St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.15794817,
+                    42.26210517
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - NMH 48217",
+                "address": "3225 S Deacon St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.10701166,
+                    42.30274008
+                ]
+            },
+            "properties": {
+                "company_org": "EGLE",
+                "station_name": "Detroit - Southwest",
+                "address": "150 Waterman St, Detroit, MI",
+                "resource_link": "https://egle.maps.arcgis.com/apps/dashboards/6f20c92fd42048bea88e7d0ad1f2ff07#"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.255,
+                    42.36
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "EGLE Detroit Joy Rd",
+                "address": "22000 Joy Rd.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.981,
+                    42.393
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "Chandler Park Service Yard",
+                "address": "5650 Conner St.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.119,
+                    42.432
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "DPD 12th Precinct",
+                "address": "1441 W Seven Mile Rd.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.051,
+                    42.426
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "DPD 11th Precinct",
+                "address": "5100 E. Nevada St.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.183,
+                    42.463
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "EGLE Oak Park",
+                "address": "13701 Oak Park Blvd.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.227,
+                    42.372
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "DPD 6th Precinct",
+                "address": "11450 Warwick St.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.107,
+                    42.303
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "EGLE Detroit SW",
+                "address": "150 Waterman",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.0,
+                    42.431
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "EGLE Detroit E7 Mile",
+                "address": "11600 E. 7 Mile",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -82.997,
+                    42.34
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "DPD Harbor Master",
+                "address": "1 Pleasure Dr.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.097,
+                    42.371
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "Joseph Walker Williams Recreation Center",
+                "address": "8431 Rosa Parks Blvd.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -83.257,
+                    42.411
+                ]
+            },
+            "properties": {
+                "company_org": "City of Detroit",
+                "station_name": "Crowell Recreation Center",
+                "address": "16630 Lahser Rd.",
+                "resource_link": "https://data.detroitmi.gov/maps/detroitmi::air-quality-monitoring-readings/about"
+            }
+        }
+    ]
+}

@@ -119,10 +119,7 @@ export default function Trucks() {
             />
           );
         })}
-        {/* linking everything*/}
-        {/* <Link to="/">Trucks</Link>
-        <Link to="/Air">Air</Link>
-        <Link to="/report">report</Link> */}
+       
 
 
         <FlyToTarget target={selected} />
