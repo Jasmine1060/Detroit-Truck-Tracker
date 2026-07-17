@@ -36,7 +36,7 @@ export function Navbar() {
                 <img src = {logo} alt="Toos logo" width= "90" height= "90" /> {/*logo image */}
         
                 <h1 style={{ fontSize: '23px', fontWeight: '600', margin: 0, color: '#1e293b' }}>
-                  Detroit Truck Reports
+                  Detroit Truck & Air Monitor Dashboard
                 </h1>
               </div>
         

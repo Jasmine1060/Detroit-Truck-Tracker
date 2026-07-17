@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, memo } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup, ZoomControl} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'; // Always keep this to avoid map tile distortion!
 
-/* 📍 SUB COMPONENT: INDIVIDUAL AIR MARKER */
+/* SUB COMPONENT: INDIVIDUAL AIR MARKER */
 const AirMarker = memo(function AirMarker ({lat, lng, station_name, address, company_org, resource_link, isActive, onSelect}) {
   return (
     <CircleMarker
@@ -29,10 +29,10 @@ const AirMarker = memo(function AirMarker ({lat, lng, station_name, address, com
               padding: '2px 6px',
               borderRadius: '4px',
               fontWeight: '700',
-              backgroundColor: "#e0f2fe", // 🚀 FIXED: Removed undefined status reference
+              backgroundColor: "#e0f2fe", // 
               color: "#0369a1"
             }}>
-              {company_org} {/* 🚀 Displays "EGLE" dynamically */}
+              {company_org} {/* Displays "EGLE"  */}
             </span>
           </div>
 
