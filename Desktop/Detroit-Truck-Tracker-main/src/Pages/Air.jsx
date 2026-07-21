@@ -112,6 +112,7 @@ export default function Trucks() {
       <MapContainer 
         center={[42.344863, -83.056870]} 
         zoom={12}
+        minZoom = {11}
         zoomControl={false}
         style={{ height: '100vh', width: '100vw' }}
       >

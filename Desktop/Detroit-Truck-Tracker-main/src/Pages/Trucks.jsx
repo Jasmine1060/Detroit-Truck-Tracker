@@ -82,6 +82,7 @@ export default function Trucks() {
       <MapContainer 
         center={[42.344863, -83.056870]} 
         zoom={12}
+        minZoom = {11}
         zoomControl={false}
         // ZoomControl Position = 'bottomright'
         style={{ height: '100vh', width: '100vw' }} /* this pushes out the map in any direction*/
