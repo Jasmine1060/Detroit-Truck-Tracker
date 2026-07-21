@@ -31,9 +31,9 @@ export function Navbar() {
     }}>
       
       {/* Left Side: Logo & Unified Title */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <img src={logo} alt="TOOS logo" width="80" height="80" style={{ objectFit: 'contain' }} />
-        <h1 style={{ fontSize: '22px', fontWeight: '700', margin: 0, color: '#1e293b' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <img src={logo} alt="TOOS logo" width="100" height="100" style={{ objectFit: 'contain' }} />
+        <h1 style={{ fontSize: '22px', fontWeight: '600', margin: 0, color: '#1e293b' }}>
           Detroit Truck & Air Insights
         </h1>
       </div>

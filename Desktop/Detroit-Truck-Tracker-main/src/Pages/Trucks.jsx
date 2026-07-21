@@ -11,8 +11,8 @@ const TruckMarker = memo(function TruckMarker ({lat, lng, isActive, onSelect}) {
       center={[lat, lng]}
       radius={isActive ? 11:8}
       pathOptions={{
-        color: isActive ? '#fff': '#551532',
-          fillColor: '#a72f53',
+        color: isActive ? '#fff': '#126a0a',
+          fillColor: '#3e6e16',
           fillOpacity: isActive ? 1: 0.8,
           weight: isActive ? 2 : 1,
 
@@ -101,7 +101,7 @@ export default function Trucks() {
         style= {{
           color: "#246E96",
           weight: 0.8,
-          fillColor: "#4594C2",
+          fillColor: "#45c294",
           fillOpacity: 0.2,
         }}
         /> }

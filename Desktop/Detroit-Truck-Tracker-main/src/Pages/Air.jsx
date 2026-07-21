@@ -9,8 +9,8 @@ const AirMarker = memo(function AirMarker ({lat, lng, station_name, address, com
       center={[lat, lng]}
       radius={isActive ? 11 : 8}
       pathOptions={{
-        color: isActive ? '#ffffff' : '#58991f',
-        fillColor: '#54bd4e',
+        color: isActive ? '#ffffff' : '#991f1f',
+        fillColor: '#a65320',
         fillOpacity: isActive ? 1 : 0.8,
         weight: isActive ? 2 : 1,
       }}
@@ -136,7 +136,6 @@ export default function Trucks() {
           />
         )}
 
-        {/* 🚀 FIXED LOOP: Cleansed variables and mapping links */}
         {trucks.map((truck, index) => {
           // 1. Get the coordinates arrays safely
           const [lng, lat] = truck.geometry.coordinates;
