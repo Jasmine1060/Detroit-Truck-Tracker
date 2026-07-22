@@ -112,7 +112,7 @@ export default function Trucks() {
       {/* Centered Overlay Container */}
       <div className="map-overlay-center">
         <div className="map-info-box">
-          <h3>Detroit Truck Sightings & Air Quality</h3>
+          <h3>Detroit Air Quality Monitor Stations</h3>
           <p>
             This map tracks public air quality monitor stations in Detroit. 
             To access JustAir monitors follow this link: <a href="https://justair.app/browse">JustAir</a> Click on any brown marker to learn more about each station.
