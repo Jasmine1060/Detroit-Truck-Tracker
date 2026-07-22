@@ -107,11 +107,21 @@ export default function Trucks() {
     setSelected({lat, lng, id: index});
   };
 
-  return (
-    <>
+  return (<div className="map-page-wrapper">
+      
+      {/* Centered Overlay Container */}
+      <div className="map-overlay-center">
+        <div className="map-info-box">
+          <h3>Detroit Truck Sightings & Air Quality</h3>
+          <p>
+            This map tracks public air quality monitor stations in Detroit. 
+            To access JustAir monitors follow this link: <a href="https://justair.app/browse">JustAir</a> Click on any brown marker to learn more about each station.
+          </p>
+        </div>
+      </div>
       <MapContainer 
-        center={[42.344863, -83.056870]} 
-        zoom={12}
+        center={[42.37029626170325, -83.09127618082336]} 
+        zoom={11}
         minZoom = {11}
         zoomControl={false}
         style={{ height: '100vh', width: '100vw' }}
@@ -160,7 +170,7 @@ export default function Trucks() {
 
         <FlyToTarget target={selected} />
       </MapContainer>
-    </>
+    </div>
   );
 }
 // import React, { useState, useEffect, useRef, memo } from "react";

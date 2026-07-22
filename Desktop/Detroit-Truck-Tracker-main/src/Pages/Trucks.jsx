@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, memo } from "react";
 import { MapContainer, TileLayer, GeoJSON, useMap, CircleMarker, Popup, ZoomControl} from 'react-leaflet';
 import {Link} from "react-router-dom"
+ 
 
 
 /*SUB COMPONENTS OF THE MAP*//////
@@ -74,14 +75,27 @@ export default function Trucks() {
    setSelected({lat, lng, id: index});
  };
 
-    
-    return(<>
-    
+
+
+    return(<div className="map-page-wrapper">
+      
+      {/* Centered Overlay Container */}
+      <div className="map-overlay-center">
+        <div className="map-info-box">
+          <h3>Detroit Truck Sightings</h3>
+          <p>
+            This map tracks where residents have seen heavy truck traffic in their neighborhoods. 
+            Click on any green marker to focus on a specific sighting.
+          </p>
+        </div>
+      </div>
+     
+      
 
       {/* starting coordinates/position */}
       <MapContainer 
-        center={[42.344863, -83.056870]} 
-        zoom={12}
+        center={[42.37029626170325, -83.09127618082336]} 
+        zoom={11}
         minZoom = {11}
         zoomControl={false}
         // ZoomControl Position = 'bottomright'
@@ -124,7 +138,7 @@ export default function Trucks() {
 
         <FlyToTarget target={selected} />
       </MapContainer>
-    </>
+    </div>
 
   );
    
