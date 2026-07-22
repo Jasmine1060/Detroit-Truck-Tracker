@@ -183,3 +183,45 @@
   }
 }
 
+
+@media (max-width: 600px) {
+  /* Scale down the 3D hero elements so they don't burst off the screen */
+  .hero .base {
+    width: 120px;
+  }
+  .hero .framework {
+    top: 22px;
+    height: 20px;
+  }
+  .hero .vite {
+    top: 75px;
+    height: 18px;
+  }
+
+  /* Compact section padding for tighter mobile viewports */
+  #center {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+
+  #next-steps > div {
+    padding: 20px 16px;
+  }
+
+  /* Make links stack 1-per-row on phones so text isn't cramped */
+  #next-steps ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #next-steps ul li {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* Universal safety for maps, charts, and embedded components */
+  iframe, canvas, svg, map {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
