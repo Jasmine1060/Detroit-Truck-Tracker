@@ -25,20 +25,17 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: 'Desktop/Detroit-Truck-Tracker-main/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
-        working-directory: Desktop/Detroit-Truck-Tracker-main
 
       - name: Build
         run: npm run build
-        working-directory: Desktop/Detroit-Truck-Tracker-main
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'Desktop/Detroit-Truck-Tracker-main/dist'
+          path: dist
 
   deploy:
     needs: build
