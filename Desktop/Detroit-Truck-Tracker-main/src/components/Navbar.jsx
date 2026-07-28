@@ -34,7 +34,7 @@ export function Navbar() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <img src={logo} alt="TOOS logo" width="100" height="100" style={{ objectFit: 'contain' }} />
         <h1 style={{ fontSize: '22px', fontWeight: '600', margin: 0, color: '#1e293b' }}>
-          Detroit Truck & Air Insights
+          Trucks Off Our Streets
         </h1>
       </div>
 
