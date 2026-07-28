@@ -56,14 +56,14 @@ export default function Trucks() {
   /*district boundries*/
 
   useEffect(() => {
-    fetch("/Detroit_City_Council_Districts_2026.geojson")
+    fetch(`${import.meta.env.BASE_URL}Detroit_City_Council_Districts_2026.geojson`)
     .then((res) => res.json())
     .then((data) => setGeoData(data))
     .catch((err) => console.error("Failed to load GeoJSON", err));}, []);
 
   /*Truck data points */
   useEffect(() => {
-  fetch('/output.geojson')
+  fetch(`${import.meta.env.BASE_URL}output.geojson`)
     .then(res => res.json())
     .then(data => setTrucks(data.features || []))
     .catch((err) => console.error('Failed to load truck plots', err));
