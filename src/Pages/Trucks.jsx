@@ -56,7 +56,7 @@ export default function Trucks() {
   /*district boundries*/
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}Detroit_City_Council_Districts_2026.geojson`)
+  fetch(`${import.meta.env.BASE_URL}Detroit_City_Council_Districts_2026.geojson`)
     .then((res) => res.json())
     .then((data) => setGeoData(data))
     .catch((err) => console.error("Failed to load GeoJSON", err));}, []);
